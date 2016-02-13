@@ -1,0 +1,20 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+{% block extra_stylesheets %}{% endblock %}
+{% endblock %}
+{% block javascript %}
+{% block extra_javascript %}{% endblock %}
+{% endblock %}
+</head>
+<body>
+<header>{% block header %}{% endblock %}</header>
+{% block content %}{% endblock %}
+<footer>{% block footer %}Copyright &copy; 2016 by Anton Guryanov{% endblock %}</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "basic.html" %}
+
+{% block extra_stylesheets %}
+{% endblock %}
+
+{% block title %}
+    Storage | Files in storage (page {{ page_num }})
+{% endblock %}
+
+{% block header %}
+    Uploaded files
+{% endblock %}
+
+{% block content %}
+    <div class="list">
+    <div class="item heading">
+        <div class="cell">Key</div>
+        <div class="cell">Upload time</div>
+        <div class="cell">SHA1 digest (hex)</div>
+        <div class="cell">Comment</div>
+        <div class="cell"></div>
+    </div>
+    {% for object in data %}
+        <div class="item">
+            <div class="cell key">{{ object.key }}</div>
+            <div class="cell date">{{ object.upload_time }}</div>
+            <div class="cell hash">{{ object.sha1_hexdigest }}</div>
+            <div class="cell comment">{{ object.comment }}</div>
+            <div class="cell download">
+                <button onclick="storage.download('{{ object.key }}')">Download</button>
+            </div>
+        </div>
+    {% empty %}
+    {% endfor %}
+    </div>
+{% endblock %}
