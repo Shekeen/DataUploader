@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_POST, require_safe
 
+from .forms import UploadForm
 from .models import StoredData
 from .utils import get_page_num_and_size
 
@@ -22,7 +23,10 @@ def list_all_data(request):
 
 @require_safe
 def upload_data(request):
-    pass
+    context = {
+        'form': UploadForm(),
+    }
+    return render(request, 'StorageProxy/upload.html', context=context)
 
 
 @require_safe

@@ -56,3 +56,15 @@ div.cell {
     padding: 10px;
     border: solid 1px black;
 }
+
+div.upload {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+div.form-field {
+    text-align: center;
+    padding: 10px;
+}

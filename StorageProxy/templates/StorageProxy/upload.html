@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+
+{% block title %}
+Storage | Upload file
+{% endblock %}
+
+{% block header %}
+Upload new file
+{% endblock %}
+
+{% block content %}
+    <div class="upload">
+    <form action="{% url "api-upload" %}" method="post">
+        {% csrf_token %}
+        <div class="form-field">{{ form.file.errors }}{{ form.file.label_tag }}{{ form.file }}</div>
+        <div class="form-field">{{ form.key.errors }}{{ form.key.label_tag }}{{ form.key }}</div>
+        <div class="form-field">{{ form.comment.errors }}{{ form.comment.label_tag }}{{ form.comment }}</div>
+        <div class="form-field"><input type="submit" value="Upload"/></div>
+    </form>
+    </div>
+{% endblock %}

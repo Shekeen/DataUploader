@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^upload/$', upload_data),
 
     url(r'^api/list', api_list_data),
-    url(r'^api/upload', api_upload_data),
+    url(r'^api/upload', api_upload_data, name='api-upload'),
 ]
