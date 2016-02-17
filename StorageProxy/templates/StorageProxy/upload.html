@@ -10,7 +10,7 @@ Upload new file
 
 {% block content %}
     <div class="upload">
-    <form action="{% url "api-upload" %}" method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-field">{{ form.file.errors }}{{ form.file.label_tag }}{{ form.file }}</div>
         <div class="form-field">{{ form.key.errors }}{{ form.key.label_tag }}{{ form.key }}</div>

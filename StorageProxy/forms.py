@@ -10,6 +10,7 @@ class UploadForm(forms.Form):
     comment = forms.CharField(
         label='Comment',
         widget=forms.Textarea,
+        required=False,
     )
     file = forms.FileField(
         label='File',
